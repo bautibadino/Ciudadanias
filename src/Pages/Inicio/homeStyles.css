@@ -1,0 +1,39 @@
+.img-spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: traslado;
+    animation-duration: 3000ms;
+    animation-fill-mode: cubic-bezier(.72,.52,.41,1.24);
+    animation-iteration-count: infinite;
+}
+.img-spinner img{
+    width: 60%;
+    height: 60%;
+}
+
+
+/* links self-center justify-center items-center	flex flex-col col-start-2 col-end-4 mt-8 md:flex-row row-start-0 row-end-2 mt-0 */
+
+@keyframes traslado {
+    0%{
+        opacity: 0%;
+        transform: translateX(-40rem) translateY(-10rem) skewX(-30deg);
+    }
+    20%{
+        transform: translateX(0rem) translateY(0rem) skewX(0rem);
+        opacity: 100%;
+    }
+    50%{
+        transform: translateX(0rem) translateY(0rem);
+        opacity: 100%;
+    }
+    80%{
+        transform: translateX(0rem) translateY(0rem);
+        opacity: 100%;
+    }
+    100%{
+        transform: translateX(-30rem) translateY(20rem) skewX(30deg);
+        opacity: 0%;
+    }
+}
