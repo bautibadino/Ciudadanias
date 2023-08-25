@@ -7,19 +7,16 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className='flex items-center w-full bg-white -z-10'>
+    <header className='-z-10 w-screen'>
       <div className="container">
         <div className="relative flex items-center justify-center -mx-4 md:justify-between">
-          <div className="max-w-full px-4 w-60">
+          <div className=" ml-3 px-4 w-auto">
             <Link to="/" className="block w-full ml-2 py-5">
-              <img
-                src="https://cdn.tailgrids.com/1.0/assets/images/logo/logo.svg"
-                alt="logo"
-                className="w-full"
-              />
+              <h3 className="text-slate-600 font-light text-4xl text-center">MiaCittadinanza</h3>
+              <p className="text-slate-600 font-normal text-sm text-center">tu ciudadania en dos clicks 🇮🇹</p>
             </Link>
           </div>
-          <div className="flex items-center justify-center w-2/3 px-4">
+          <div className="flex items-center justify-end w-2/3 mr-4 px-4">
             <div>
               <button
                 // @click="navbarOpen = !navbarOpen"
@@ -37,7 +34,7 @@ const NavBar = () => {
               <nav
                 // :className="!navbarOpen && 'hidden' "
                 id="navbarCollapse"
-                className={`animate__animated animate__fadeInTopRight absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 px-6 shadow z-50 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
+                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 px-6 shadow z-50 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
                   !open && "hidden"
                 } `}
               >

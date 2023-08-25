@@ -28,6 +28,7 @@ const Home = () => {
                   NA
                 </span>
               </h1>
+
             </div>
 
             

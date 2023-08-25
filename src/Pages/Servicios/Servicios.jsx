@@ -94,7 +94,7 @@ const Servicios = () => {
             <h3 className="text-3xl text-center my-4 z-10 font-semibold md:text-4xl text-slate-600 uppercase">
             Ciudadania por via judicial - materna
             </h3>
-            <p className="z-10 text-xl font-light">
+            <p className="z-10 text-xl font-light p-6">
               Corresponde realizar la ciudadanía italiana vía judicial cuando el hijo o la hija de la primer mujer dentro de la línea de descendencia haya nacido antes del 1 de enero de 1948. En ese caso se debe solicitar el reconocimiento por vía judicial ante los Tribunales italianos. 
             </p>
             <NavLink to={'/contacto'} className={'mt-6 bg-slate-600 px-8 py-3 rounded-md text-white uppercase'} ><button>Contacto</button></NavLink>

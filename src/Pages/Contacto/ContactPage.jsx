@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import Alerta from "../../Components/Alerta";
 
@@ -25,6 +26,7 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (
       values.name === "" ||
       values.email === "" ||
@@ -58,11 +60,30 @@ const ContactPage = () => {
         message: "",
       });
       e.target.reset();
-      
+
       setAlerta({ msg: "" });
     }, 3000);
-    
-   
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+
+      emailjs
+        .sendForm(
+          "service_649f4gl",
+          "template_djx6sa9",
+          form.current,
+          "S5lhKpsJybE3ZKF0F"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    };
+    sendEmail(e);
   };
 
   const { msg } = alerta;
@@ -76,6 +97,8 @@ const ContactPage = () => {
           </h3>
         </div>
         <div className="row-start-2 row-end-3 md:col-start-2 md:col-end-3 md:row-start-1 ">
+        {msg && <Alerta alerta={alerta} />}
+
           <form ref={form} className="px-8 mb-12" onSubmit={handleSubmit}>
             <div className="my-8">
               <label className="uppercase text-gray-500 block font-bold">
@@ -127,10 +150,9 @@ const ContactPage = () => {
             </div>
             <input
               type="submit"
-              value="Registrar"
+              value="Enviar consulta"
               className="bg-green-800 w-full py-2 px-10 text-white font-semibold uppercase rounded-md mt-4 hover:bg-green-900 md:w-auto"
             />
-            {msg && <Alerta alerta={alerta} />}
           </form>
         </div>
       </div>
